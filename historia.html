@@ -1,90 +1,102 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <title>Història - Geometry Dash</title>
-  <link rel="stylesheet" href="estils.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+   <meta charset="UTF-8">
+   <title>Història - Geometry Dash</title>
+   <link rel="stylesheet" href="estils.css">
+   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 
 <body>
 
-<header class="main-header">
-  <div class="logo">
-    <img src="./img/logo-geometry.jpg" alt="Geometry Dash">
-    <h1>Geometry Dash</h1>
-  </div>
-  <nav>
-    <a href="Pagina principal.html">Página principal</a>
-    <a href="instruccions.html">Instruccions</a>
-    <a href="historia.html">Història</a>
-    <a href="contacte.html">Contacte</a>
-    <a href="About us.html">About us</a>
-  </nav>
-</header>
 
-<main class="historia">
+   <header class="main-header">
+       <div class="header-container">
+           <div class="logo">
+               <img src="./img/logo-geometry.jpg" alt="Logo Geometry Dash">
+               <h1>GDASH</h1>
+           </div>
+           <nav>
+               <ul>
+                   <li><a href="Pagina principal.html">Inici</a></li>
+                   <li><a href="instruccions.html">Instruccions</a></li>
+                   <li><a href="historia.html" class="active">Història</a></li>
+                   <li><a href="contacte.html">Contacte</a></li>
+                   <li><a href="About us.html">About Us</a></li>
+               </ul>
+           </nav>
+       </div>
+   </header>
 
-  <h2 class="historia-title">La Història del Joc</h2>
 
-  <!-- CARRUSEL CSS PURO -->
-  <section class="carousel">
-    <div class="slides">
-      <img src="./img/inicio.jpg" alt="Inici del viatge">
-      <img src="./img/trampas.jpg" alt="Obstacles geomètrics">
-      <img src="./img/niveles.jpg" alt="Nivells avançats">
-    </div>
-  </section>
+   <main class="historia-page">
+       <section class="historia-hero">
+           <h2 class="historia-title">La Història del Joc</h2>
+           <p>Un viatge a través del ritme i la geometria.</p>
+       </section>
 
-  <!-- SECCIONES DE HISTORIA -->
-  <section class="historia-content">
-    <article class="historia-block">
-      <img src="./img/inicio.jpg" alt="El cub">
-      <div>
-        <h3>El Cub Geomètric</h3>
-        <p>
-          En Geometry Dash controles un petit cub que viatja a través de mons plens
-          d’obstacles mortals. No té nom, però representa la perseverança i la precisió.
-        </p>
-      </div>
-    </article>
 
-    <article class="historia-block reverse">
-      <img src="./img/trampas.jpg" alt="El món">
-      <div>
-        <h3>Un Món Hostil</h3>
-        <p>
-          El món està format per formes geomètriques, trampes i plataformes que es mouen
-          al ritme de la música. Cada nivell és un repte de reflexos i memòria.
-        </p>
-      </div>
-    </article>
+       <section class="carousel-container">
+           <div class="carousel">
+               <div class="slides">
+                   <img src="./img/inicio.jpg" alt="Inici del viatge">
+                   <img src="./img/trampas.jpg" alt="Obstacles geomètrics">
+                   <img src="./img/niveles.jpg" alt="Nivells avançats">
+               </div>
+           </div>
+       </section>
 
-    <article class="historia-block">
-      <img src="./img/ritmo.jpg" alt="La música">
-      <div>
-        <h3>El Ritme Ho És Tot</h3>
-        <p>
-          La música no és només ambient: és part del joc. Saltar fora de ritme
-          significa perdre. Només els jugadors més constants arriben al final.
-        </p>
-      </div>
-    </article>
-  </section>
 
-</main>
+       <section class="historia-content">
+           <article class="historia-block">
+               <div class="img-wrapper">
+                   <img src="./img/inicio.jpg" alt="El cub">
+               </div>
+               <div class="text-wrapper">
+                   <h3>El Cub Geomètric</h3>
+                   <p>En Geometry Dash controles un petit cub que viatja a través de mons plens d'obstacles mortals. No té nom, però representa la perseverança i la precisió.</p>
+               </div>
+           </article>
 
-<footer class="main-footer">
-  <div class="social">
-    <span class="material-icons">twitter</span>
-    <span class="material-icons">instagram</span>
-    <span class="material-icons">facebook</span>
-    <span class="material-icons">tiktok</span>
-  </div>
-  <p>© 2026 Geometry Dash</p>
-</footer>
+
+           <article class="historia-block reverse">
+               <div class="img-wrapper">
+                   <img src="./img/trampas.jpg" alt="El món">
+               </div>
+               <div class="text-wrapper">
+                   <h3>Un Món Hostil</h3>
+                   <p>El món està format per formes geomètriques, trampes i plataformes que es mouen al ritme de la música. Cada nivell és un repte de reflexos i memòria.</p>
+               </div>
+           </article>
+
+
+           <article class="historia-block">
+               <div class="img-wrapper">
+                   <img src="./img/ritmo.jpg" alt="La música">
+               </div>
+               <div class="text-wrapper">
+                   <h3>El Ritme Ho És Tot</h3>
+                   <p>La música no és només ambient: és part del joc. Saltar fora de ritme significa perdre. Només els jugadors més constants arriben al final.</p>
+               </div>
+           </article>
+       </section>
+   </main>
+
+
+   <footer class="main-footer">
+       <div class="footer-container">
+           <div class="social">
+               <a href="#"><span class="material-icons">flutter_dash</span></a>
+               <a href="#"><span class="material-icons">camera_alt</span></a>
+               <a href="#"><span class="material-icons">facebook</span></a>
+               <a href="#"><span class="material-icons">play_circle</span></a>
+           </div>
+           <p class="copyright">© 2026 Geometry Dash - Tots els drets reservats</p>
+       </div>
+   </footer>
+
 
 </body>
 </html>

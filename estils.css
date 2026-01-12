@@ -202,111 +202,140 @@ nav a:hover, nav a.active { color: var(--primary-neon); text-shadow: 0 0 10px va
 }
 
 /*---------------------------------------------------------*/
+/* HISTÒRIA */
 
-/*HISTÒRIA */
 
-.historia {
-  padding: 3rem 2rem;
+.historia-page {
+   padding-bottom: 80px;
 }
+
+
+.historia-hero {
+   text-align: center;
+   padding: 60px 20px;
+   background: linear-gradient(to bottom, #111, #0a0a0a);
+}
+
 
 .historia-title {
-  font-family: var(--font-title);
-  font-size: 1.5rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
+   font-family: 'Press Start 2P', cursive;
+   color: var(--accent-neon);
+   font-size: 1.8rem;
+   text-shadow: 0 0 15px var(--accent-neon);
+   margin-bottom: 15px;
 }
 
-/* CARRUSEL*/
+
+/* CARRUSEL  */
+.carousel-container {
+   padding: 20px 0 40px;
+   display: flex;
+   justify-content: center;
+}
+
 
 .carousel {
-  width: 100%;
-  max-width: 480px;
-  height: 260px;            
-  margin: 0 auto 3rem auto;
-  overflow: hidden;
-  border-radius: 16px;
-  background-color: #000; 
-  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+   width: 100%;
+   max-width: 600px; /* Tamaño más controlado */
+   height: 350px;    /* Altura fija para evitar saltos */
+   overflow: hidden;
+   border: 3px solid var(--primary-neon);
+   border-radius: 15px;
+   background-color: #000; 
+   box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
 }
 
 .slides {
-  display: flex;
-  height: 100%;
-  animation: slide 24s infinite ease-in-out;
+   display: flex;
+   width: 300%; /* Exactamente 3 imágenes (100% cada una) */
+   height: 100%;
+   animation: slide-perfect 12s infinite ease-in-out;
 }
 
 .slides img {
-  flex: 0 0 100%;            
-}
-
-/* ANIMACIÓN FOTOS */
-@keyframes slide {
-  0%   { transform: translateX(0); }
-  33.33%  { transform: translateX(0); }
-
-  36%  { transform: translateX(-100%); }
-  66.66%  { transform: translateX(-100%); }
-
-  69%  { transform: translateX(-200%); }
-  100% { transform: translateX(-200%); }
+   width: 33.333%; /* Cada imagen ocupa un tercio del contenedor de 300% */
+   height: 100%;
+   object-fit: contain;
+   display: block;
 }
 
 
-/* CONTENIDO */
-
+/* BLOCS DE CONTINGUT */
 .historia-content {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+   max-width: 1000px;
+   margin: 0 auto;
+   padding: 0 20px;
+   display: flex;
+   flex-direction: column;
+   gap: 80px;
 }
 
 .historia-block {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+   display: flex;
+   align-items: center;
+   gap: 80px;
 }
 
 .historia-block.reverse {
-  flex-direction: row-reverse;
+   flex-direction: row-reverse;
 }
 
-.historia-block img {
-  width: 280px;
-  max-width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+
+.img-wrapper {
+   flex: 1;
 }
 
-.historia-block h3 {
-  font-family: var(--font-title);
-  font-size: 1rem;
-  margin-bottom: 1rem;
+
+.img-wrapper img {
+   width: 100%;
+   border-radius: 15px;
+   border: 2px solid #333;
+   transition: 0.4s;
 }
 
-.historia-block p {
-  line-height: 1.6;
-  max-width: 600px;
+
+.historia-block:hover .img-wrapper img {
+   border-color: var(--primary-neon);
+   box-shadow: 0 0 20px var(--primary-neon);
+   transform: scale(1.02);
 }
 
-/* RESPONSIVE*/
 
+.text-wrapper {
+   flex: 2;
+}
+
+
+.text-wrapper h3 {
+   font-family: 'Press Start 2P', cursive;
+   font-size: 1rem;
+   color: var(--primary-neon);
+   margin-bottom: 20px;
+}
+
+
+.text-wrapper p {
+   font-family: 'Orbitron', sans-serif;
+   line-height: 1.8;
+   color: #ccc;
+}
+
+
+/* ANIMACIÓ CARRUSEL */
+@keyframes slide-perfect {
+   0%, 25% { transform: translateX(0); }            /* Imagen 1 */
+   33%, 58% { transform: translateX(-33.333%); }    /* Imagen 2 */
+   66%, 91% { transform: translateX(-66.666%); }    /* Imagen 3 */
+   100% { transform: translateX(0); }               /* Vuelve al inicio */
+}
+
+
+/* Ajuste para móviles */
 @media (max-width: 768px) {
-
-  .carousel {
-    max-width: 90%;
-    height: 200px;
-  }
-
-  .historia-block,
-  .historia-block.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .historia-block img {
-    width: 100%;
-    max-width: 320px;
-  }
+   .carousel {
+       height: 200px;
+       max-width: 90%;
+   }
 }
 
 /*----------------------------------------------------------------------------------------*/
