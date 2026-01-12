@@ -4,59 +4,118 @@
     <link rel="stylesheet" href="estils.css">
        <meta charset="UTF-8">
        <title>instruccions</title>
-       <h1>instruccions</h1>
-       <p>com jugar al geometry Dash</p>
-    <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
+       Aquesta pàgina d'Instruccions necessita complir el requisit de les targetes animades amb "mouseover" i mantenir l'estètica professional de neó. He corregit l'estructura de l'HTML (tenies etiquetes fora de lloc) i he afegit el CSS necessari per a les animacions de les targetes.
+
+Aquí tens la versió millorada:
+1. HTML d'Instruccions (instruccions.html)
+HTML
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruccions - Geometry Dash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="estils.css">
+</head>
+<body>
 
     <header class="main-header">
-    <div class="logo">
-        <img src="./img/logo-geometry.jpg" alt="Geometry Dash">
-        <h1>Geometry Dash</h1>
-    </div>
-    <nav>
-        <a href="Pagina principal.html">Página principal</a>
-        <a href="instruccions.html">Instruccions</a>
-        <a href="historia.html">Història</a>
-        <a href="contacte.html">Contacte</a>
-        <a href="About us.html">About us</a>
-    </nav>
+        <div class="header-container">
+            <div class="logo">
+                <img src="./img/logo-geometry.jpg" alt="Geometry Dash">
+                <h1>GDASH</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Pagina principal.html">Inici</a></li>
+                    <li><a href="instruccions.html" class="active">Instruccions</a></li>
+                    <li><a href="historia.html">Història</a></li>
+                    <li><a href="contacte.html">Contacte</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-    <section class="instruccions-captures">
-        <img src="./img/geometry controles.png" alt="Controles">
-        <p>Podeu utilitzar l'espai o el botó esquerre per saltar els obtacles. I si jugues amb mòbil has d'utilitzar el dit per saltar.</p>
-    </section>
+    <main class="container-inst">
+        <section class="page-title">
+            <h2>MANUAL DE VOL</h2>
+            <p>Aprèn a dominar el cub i sobreviu al ritme.</p>
+        </section>
 
-    <section class="mecaniques">
-        <h3>Mecàniques del joc</h3>
-        <ul>
-        <li>Salts precisos sobre obstacles</li>
-        <li>Plataformes mòbils i pinxos</li>
-        <li>Seguir el ritme de la música</li>
-        <li>Desbloquejar nivells avançats</li>
-        </ul>
-    </section>
+        <section class="instruccions-captures">
+            <div class="capture-card">
+                <img src="./img/geometry controles.png" alt="Controles">
+                <div class="capture-text">
+                    <h3>Controls Bàsics</h3>
+                    <p>Utilitza la <strong>Barra Espaiadora</strong> o el <strong>Clic Esquerre</strong> per saltar els obstacles. En dispositius mòbils, prem qualsevol part de la pantalla.</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="tarjetas">
-        <div class="card">Nivel 1: Easy</div>
-        <div class="card">Nivel 2: Medium</div>
-        <div class="card">Nivel 3: Hard</div>
-    </section>
+        <section class="mecaniques-box">
+            <h3>Mecàniques del joc</h3>
+            <div class="mecaniques-grid">
+                <div class="mecanica-item">
+                    <span class="material-icons">timer</span>
+                    <p>Salts precisos sobre obstacles</p>
+                </div>
+                <div class="mecanica-item">
+                    <span class="material-icons">dangerous</span>
+                    <p>Evita pinxos i serres</p>
+                </div>
+                <div class="mecanica-item">
+                    <span class="material-icons">music_note</span>
+                    <p>Segueix el ritme de la música</p>
+                </div>
+                <div class="mecanica-item">
+                    <span class="material-icons">lock_open</span>
+                    <p>Desbloqueja nivells avançats</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tarjetas-container">
+            <h3>Selecciona la dificultat</h3>
+            <div class="tarjetas">
+                <div class="card card-easy">
+                    <div class="card-content">
+                        <h4>Easy</h4>
+                        <img src="./img/face-easy.png" alt="Easy" class="card-icon"> <p>Ideal per començar el teu viatge.</p>
+                    </div>
+                </div>
+                <div class="card card-medium">
+                    <div class="card-content">
+                        <h4>Medium</h4>
+                        <img src="./img/face-medium.png" alt="Medium" class="card-icon">
+                        <p>Requereix concentració i ritme.</p>
+                    </div>
+                </div>
+                <div class="card card-hard">
+                    <div class="card-content">
+                        <h4>Hard</h4>
+                        <img src="./img/face-hard.png" alt="Hard" class="card-icon">
+                        <p>Només per a mestres del cub.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="main-footer">
-    <div class="social">
-        <span class="material-icons">twitter</span>
-        <span class="material-icons">instagram</span>
-        <span class="material-icons">facebook</span>
-        <span class="material-icons">tiktok</span>
-    </div>
-    <p>© 2026 Geometry Dash</p>
+        <div class="footer-container">
+            <div class="social">
+                <a href="#"><span class="material-icons">flutter_dash</span></a>
+                <a href="#"><span class="material-icons">camera_alt</span></a>
+                <a href="#"><span class="material-icons">facebook</span></a>
+                <a href="#"><span class="material-icons">play_circle</span></a>
+            </div>
+            <p class="copyright">© 2026 Geometry Dash - Tots els drets reservats</p>
+        </div>
     </footer>
 
-    </body>
-    </html>
+</body>
+</html>

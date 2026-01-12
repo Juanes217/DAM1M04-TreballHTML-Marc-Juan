@@ -1,58 +1,80 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-   <head>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="estils.css">
-       <meta charset="UTF-8">
-       <title>Principal</title>
-    <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
+</head>
+<body>
 
     <header class="main-header">
-    <div class="logo">
-        <img src="./img/logo-geometry.jpg" alt="Geometry Dash">
-        <h1>Geometry Dash</h1>
-    </div>
-    <nav>
-        <a href="Pagina principal.html">Página principal</a>
-        <a href="instruccions.html">Instruccions</a>
-        <a href="historia.html">Història</a>
-        <a href="contacte.html">Contacte</a>
-        <a href="About us.html">About us</a>
-    </nav>
+        <div class="header-container">
+            <div class="logo">
+                <img src="./img/logo-geometry.jpg" alt="Logo Geometry Dash">
+                <h1>GDASH</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inici</a></li>
+                    <li><a href="instruccions.html">Instruccions</a></li>
+                    <li><a href="historia.html">Història</a></li>
+                    <li><a href="contacte.html">Contacte</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-    <img src="./img/juego.jpg" alt="Hero del joc">
-    <div class="hero-text">
-        <h2>Salta al ritme</h2>
-        <p>Supera els obstacles i arriba al final del nivell.</p>
-    </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>SALTA AL RITME</h2>
+                <p>L'aventura de plataformes més addictiva del món.</p>
+                <a href="#jugar" class="btn-hero">JUGA ARA</a>
+            </div>
+        </section>
 
-    <!-- Com es juga -->
-    <section class="com-es-juga">
-    <h3>Com es juga?</h3>
-    <ul>
-        <li>Salta sobre obstacles geomètrics</li>
-        <li>Evita les broquetes i plataformes mòbils</li>
-        <li>Segueix el ritme de la música</li>
-        <li>Desbloqueja noves aparences i nivells</li>
-    </ul>
-    <a href="instruccions.html">Veure instruccions</a>
-    </section>
+        <section class="vector-section">
+            <div class="svg-container">
+                <svg width="80" height="80" viewBox="0 0 100 100" class="cube-svg">
+                    <rect x="10" y="10" width="80" height="80" fill="#00FF00" stroke="#fff" stroke-width="5"/>
+                    <rect x="25" y="25" width="15" height="15" fill="#000"/>
+                    <rect x="60" y="25" width="15" height="15" fill="#000"/>
+                    <rect x="30" y="60" width="40" height="10" fill="#000"/>
+                </svg>
+                <p>Domina el cub, domina el ritme.</p>
+            </div>
+        </section>
+
+        <section class="scroll-animation-section">
+            <div class="scroll-reveal">
+                <h3>Una aventura en moviment</h3>
+                <p>Mentre avances (scroll), els obstacles apareixen!</p>
+                <div class="obstacle-course">
+                    <div class="moving-spike">▲</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="jugar" class="com-es-juga">
+            <div class="info-box">
+                <h3>Com es juga?</h3>
+                <ul class="mechanics-list">
+                    <li><span class="material-icons">mouse</span> Un sol clic per saltar.</li>
+                    <li><span class="material-icons">music_note</span> Sincronitza't amb la música.</li>
+                    <li><span class="material-icons">warning</span> Evita les punxes i serres.</li>
+                    <li><span class="material-icons">auto_fix_high</span> Personalitza el teu personatge.</li>
+                </ul>
+                <a href="instruccions.html" class="btn-more">Llegir Instruccions Completes</a>
+            </div>
+        </section>
+    </main>
 
     <footer class="main-footer">
-    <div class="social">
-        <span class="material-icons">twitter</span>
-        <span class="material-icons">instagram</span>
-        <span class="material-icons">facebook</span>
-        <span class="material-icons">tiktok</span>
-    </div>
-    <p>© 2026 Geometry Dash</p>
+        <div class="footer-container">
+            <div class="social">
+                <a href="#"><span class="material-icons">flutter_dash</span></a> <a href="#"><span class="material-icons">camera_alt</span></a> <a href="#"><span class="material-icons">facebook</span></a>
+                <a href="#"><span class="material-icons">play_circle</span></a> </div>
+            <p class="copyright">© 2026 Geometry Dash - Tots els drets reservats</p>
+        </div>
     </footer>
 
-    </body>
-    </html>
+</body>
+</html>

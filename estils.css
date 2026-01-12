@@ -1,290 +1,243 @@
-/*VARIABLES Y TIPOGRAFÍAS */
+/* VARIABLES I BASE */
 :root {
-  --color-primary: #ff2d55;
-  --color-secondary: #ffcd3c;
-  --color-dark: #1e1e2f;
-  --color-light: #f5f6fa;
-  --color-accent: #00cec9;
-
-  --font-title: 'Press Start 2P', cursive;
-  --font-text: 'Roboto', sans-serif;
+    --bg-dark: #0a0a0a;
+    --primary-neon: #2196F3;
+    --accent-neon: #4CAF50;
+    --text-white: #ffffff;
 }
 
-/*RESET Y BODY*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Orbitron', sans-serif; /* Més professional que Roboto per GD */
+    overflow-x: hidden;
 }
 
-html, body {
-  font-family: var(--font-text);
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  padding-top: 80px;
-  overflow-x: hidden;
-}
-
-/*HEADER*/
+/* HEADER (Flexbox) */
 .main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #111;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 3px solid var(--primary-neon);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.main-header .logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
 }
 
-.main-header .logo img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
+.logo { display: flex; align-items: center; gap: 15px; }
+.logo img { height: 45px; border-radius: 5px; }
+.logo h1 { font-family: 'Press Start 2P', cursive; font-size: 0.8rem; }
 
-.main-header .logo h1 {
-  font-family: var(--font-title);
-  font-size: 1.5rem;
-}
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { color: white; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+nav a:hover, nav a.active { color: var(--primary-neon); text-shadow: 0 0 10px var(--primary-neon); }
 
-nav {
-  display: flex;
-  gap: 1.5rem;
-}
-
-nav a {
-  color: var(--color-light);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: var(--color-accent);
-  text-decoration: underline;
-}
-
-/*HERO*/
+/* HERO SECTION */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  padding: 3rem;
-  align-items: start; 
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./img/juego.jpg') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.hero img {   
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 12px;
+.hero-content h2 { font-size: 3rem; margin-bottom: 20px; color: var(--accent-neon); }
+.btn-hero {
+    padding: 15px 30px;
+    background: var(--primary-neon);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
 }
 
-.hero-text {
-  margin-top: 1.5rem; 
+/* ANIMACIÓ VECTORIAL (SVG) */
+.vector-section { padding: 50px; text-align: center; background: #111; }
+.cube-svg { animation: rotateCube 2s infinite linear; margin-bottom: 20px; }
+
+@keyframes rotateCube {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-/* COM ES JUGA*/
-.com-es-juga {
-  padding: 2rem;
+/* ANIMACIÓ SCROLL */
+.scroll-animation-section { padding: 100px 0; text-align: center; }
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
 }
 
-.com-es-juga ul {
-  list-style: none;
-  display: grid;
-  gap: 1rem;
-  margin-bottom: 1rem;
+/* Quan l'element és visible (simulem amb scroll-driven CSS) */
+@supports (animation-timeline: view()) {
+    .scroll-reveal {
+        animation: reveal linear forwards;
+        animation-timeline: view();
+        animation-range: entry 20% cover 40%;
+    }
 }
 
-.com-es-juga a {
-  color: var(--color-primary);
-  text-decoration: none;
-  font-weight: bold;
+@keyframes reveal {
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.com-es-juga a:hover {
-  color: var(--color-accent);
-  text-decoration: underline;
+/* COM ES JUGA (Flexbox/Grid) */
+.com-es-juga { padding: 80px 10%; background: #050505; }
+.mechanics-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+.mechanics-list li {
+    background: #1a1a1a;
+    padding: 20px;
+    border-left: 5px solid var(--accent-neon);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* FOOTER*/
+/* FOOTER (Alineat a la dreta) */
 .main-footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 2rem;
-  background-color: #111;
-  margin-top: 3rem;
+    padding: 40px 5%;
+    background: #000;
+    border-top: 1px solid #333;
 }
 
-.main-footer .social span {
-  cursor: pointer;
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
+.footer-container {
+    text-align: right; /* Requisit */
 }
 
-/*RESPONSIVE*/
+.social { margin-bottom: 10px; }
+.social a { color: white; margin-left: 15px; text-decoration: none; }
+.social a:hover { color: var(--primary-neon); }
+.copyright { font-size: 0.8rem; color: #666; }
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .hero {
-    padding: 2rem;
-  }
-
-  .hero-text {
-    top: 10px;
-    padding: 0.5rem 1rem;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-  }
+    .header-container { flex-direction: column; gap: 15px; }
+    .hero-content h2 { font-size: 1.8rem; }
 }
 /*INSTRUCCIONS*/
-:root {
-  --color-primary: #ff2d55;
-  --color-dark: #1e1e2f;
-  --color-light: #f5f6fa;
-  --color-accent: #00cec9;
-
-  --font-title: 'Press Start 2P', cursive;
-  --font-text: 'Roboto', sans-serif;
+/* Contenidor general de la pàgina */
+.container-inst {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
 }
 
-/*RESET Y BODY*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.page-title {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-html, body {
-  font-family: var(--font-text);
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  padding-top: 80px;
-  overflow-x: hidden;
+/* Captures amb estil professional */
+.instruccions-captures {
+    background: #111;
+    border: 2px solid #333;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 50px;
 }
 
-/*HEADER*/
-.main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #111;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+.capture-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
-.main-header .logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.capture-card img {
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid var(--primary-neon);
+    box-shadow: 0 0 15px var(--primary-neon);
 }
 
-.main-header .logo img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+/* Mecàniques amb Grid */
+.mecaniques-box {
+    margin-bottom: 60px;
 }
 
-.main-header .logo h1 {
-  font-family: var(--font-title);
-  font-size: 1.5rem;
+.mecaniques-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
 }
 
-nav {
-  display: flex;
-  gap: 1.5rem;
+.mecanica-item {
+    background: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-neon);
 }
 
-nav a {
-  color: var(--color-light);
-  text-decoration: none;
-  font-weight: bold;
+.mecanica-item .material-icons {
+    font-size: 40px;
+    color: var(--accent-neon);
+    margin-bottom: 10px;
 }
 
-nav a:hover {
-  color: var(--color-accent);
-  text-decoration: underline;
+/* TARGETES ANIMADES (MOUSEOVER) */
+.tarjetas {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
-/*CAPTURAS*/
-.instruccions-captures img {
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  margin-bottom: 1rem;
-}
-
-.instruccions-captures p {
-  margin: 0;
-  line-height: 1.5;
-}
-
-/*MECÀNIQUES*/
-.mecaniques ul {
-  list-style: disc inside;
-  margin: 1rem 0;
-  gap: 0.5rem;
-}
-
-/*TARJETAS INTERACTIVAS*/
 .card {
-  background: #2d2d44;
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin: 1rem 0;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
+    flex: 1;
+    min-width: 250px;
+    background: #1a1a1a;
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animació suau */
 }
 
+/* Efecte Mouseover */
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transform: scale(1.05) translateY(-15px);
+    background: #222;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-/*FOOTER*/
-.main-footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 2rem;
-  background-color: #111;
-  margin-top: 3rem;
+.card-easy:hover { border-color: #4CAF50; box-shadow: 0 0 20px rgba(76, 175, 80, 0.4); }
+.card-medium:hover { border-color: #FFC107; box-shadow: 0 0 20px rgba(255, 193, 7, 0.4); }
+.card-hard:hover { border-color: #F44336; box-shadow: 0 0 20px rgba(244, 67, 54, 0.4); }
+
+.card-icon {
+    width: 60px;
+    margin: 20px 0;
 }
 
-.main-footer .social span {
-  cursor: pointer;
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
+.card h4 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
 }
 
-/*RESPONSIVE */
+/* Responsive */
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-  }
+    .capture-card { flex-direction: column; }
+    .capture-card img { width: 100%; }
 }
 
 /*---------------------------------------------------------*/
