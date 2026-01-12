@@ -132,112 +132,73 @@ nav a:hover, nav a.active { color: var(--primary-neon); text-shadow: 0 0 10px va
     .hero-content h2 { font-size: 1.8rem; }
 }
 /*INSTRUCCIONS*/
-/* Contenidor general de la pàgina */
-.container-inst {
-    width: 90%;
-    max-width: 1100px;
-    margin: 40px auto;
+/* Estils per a les Targetes Animades */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
-
-.page-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-/* Captures amb estil professional */
-.instruccions-captures {
+.card {
     background: #111;
     border: 2px solid #333;
-    padding: 30px;
     border-radius: 15px;
-    margin-bottom: 50px;
-}
-
-.capture-card {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.capture-card img {
-    width: 50%;
-    border-radius: 10px;
-    border: 2px solid var(--primary-neon);
-    box-shadow: 0 0 15px var(--primary-neon);
-}
-
-/* Mecàniques amb Grid */
-.mecaniques-box {
-    margin-bottom: 60px;
-}
-
-.mecaniques-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 25px;
-}
-
-.mecanica-item {
-    background: #1a1a1a;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
-    border-bottom: 4px solid var(--accent-neon);
-}
-
-.mecanica-item .material-icons {
-    font-size: 40px;
-    color: var(--accent-neon);
-    margin-bottom: 10px;
-}
-
-/* TARGETES ANIMADES (MOUSEOVER) */
-.tarjetas {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.card {
-    flex: 1;
-    min-width: 250px;
-    background: #1a1a1a;
-    padding: 40px 20px;
-    border-radius: 10px;
-    text-align: center;
-    border: 2px solid #333;
+    transition: all 0.4s ease; /* Transició per a l'efecte suau */
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animació suau */
+    position: relative;
+    overflow: hidden;
+}
+.tarjetas .card img, 
+.instruccions-captures img {
+    width: 100% !important;     /* Ocupa el contenidor */
+    max-width: 750px !important; /* PERÒ no passarà de 250 píxels (ajusta aquest número al teu gust) */
+    height: auto !important;    /* No es deforma */
+    display: block !important;
+    margin: 0 auto 15px auto !important; /* Centrada i amb espai a sota */
+}
+.card img {
+    width: 100px; 
+    height: auto;
+    margin: 0 auto 15px auto; /* La centra i dona espai a sota */
+    display: block;           /* Assegura que el margin auto funcioni */
 }
 
-/* Efecte Mouseover */
+/* EFECTE MOUSEOVER (ANIMACIÓ) */
 .card:hover {
-    transform: scale(1.05) translateY(-15px);
-    background: #222;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(-15px) scale(1.03); /* Puja i creix una mica */
+    background: #1a1a1a;
+    box-shadow: 0 0 25px var(--glow-color); /* Llum neó al voltant */
 }
 
-.card-easy:hover { border-color: #4CAF50; box-shadow: 0 0 20px rgba(76, 175, 80, 0.4); }
-.card-medium:hover { border-color: #FFC107; box-shadow: 0 0 20px rgba(255, 193, 7, 0.4); }
-.card-hard:hover { border-color: #F44336; box-shadow: 0 0 20px rgba(244, 67, 54, 0.4); }
+/* Variants de colors neó segons la dificultat */
+.card-easy { --glow-color: #4CAF50; }
+.card-medium { --glow-color: #FFC107; }
+.card-hard { --glow-color: #F44336; }
 
-.card-icon {
-    width: 60px;
-    margin: 20px 0;
+.card:hover .card-header-neon {
+    color: var(--glow-color);
+    text-shadow: 0 0 10px var(--glow-color);
 }
 
-.card h4 {
+.card-header-neon {
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #fff;
+    transition: 0.3s;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .capture-card { flex-direction: column; }
-    .capture-card img { width: 100%; }
+.neon-icon {
+    font-size: 50px !important;
+    color: #444;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.card:hover .neon-icon {
+    color: var(--glow-color);
 }
 
 /*---------------------------------------------------------*/

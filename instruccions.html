@@ -4,19 +4,7 @@
     <link rel="stylesheet" href="estils.css">
        <meta charset="UTF-8">
        <title>instruccions</title>
-       Aquesta pàgina d'Instruccions necessita complir el requisit de les targetes animades amb "mouseover" i mantenir l'estètica professional de neó. He corregit l'estructura de l'HTML (tenies etiquetes fora de lloc) i he afegit el CSS necessari per a les animacions de les targetes.
-
-Aquí tens la versió millorada:
-1. HTML d'Instruccions (instruccions.html)
-HTML
-
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instruccions - Geometry Dash</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="estils.css">
 </head>
@@ -34,7 +22,7 @@ HTML
                     <li><a href="instruccions.html" class="active">Instruccions</a></li>
                     <li><a href="historia.html">Història</a></li>
                     <li><a href="contacte.html">Contacte</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="About us.html">About Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -42,63 +30,54 @@ HTML
 
     <main class="container-inst">
         <section class="page-title">
-            <h2>MANUAL DE VOL</h2>
-            <p>Aprèn a dominar el cub i sobreviu al ritme.</p>
+            <h2>GUIA D'ENTRENAMENT</h2>
+            <p>Domina les mecàniques per superar els nivells més difícils.</p>
         </section>
 
         <section class="instruccions-captures">
             <div class="capture-card">
-                <img src="./img/geometry controles.png" alt="Controles">
+                <img src="./img/geometry controles.png" alt="Controles del joc">
                 <div class="capture-text">
-                    <h3>Controls Bàsics</h3>
-                    <p>Utilitza la <strong>Barra Espaiadora</strong> o el <strong>Clic Esquerre</strong> per saltar els obstacles. En dispositius mòbils, prem qualsevol part de la pantalla.</p>
+                    <h3>Controls del Cub</h3>
+                    <p>Utilitza la <strong>Barra Espaiadora</strong>, el <strong>Clic Esquerre</strong> o la tecla <strong>W</strong> per saltar els obstacles. Recorda que la pressió llarga et permet fer salts consecutius!</p>
                 </div>
             </div>
         </section>
-
+        <br>
         <section class="mecaniques-box">
             <h3>Mecàniques del joc</h3>
             <div class="mecaniques-grid">
                 <div class="mecanica-item">
-                    <span class="material-icons">timer</span>
-                    <p>Salts precisos sobre obstacles</p>
-                </div>
-                <div class="mecanica-item">
-                    <span class="material-icons">dangerous</span>
-                    <p>Evita pinxos i serres</p>
-                </div>
-                <div class="mecanica-item">
-                    <span class="material-icons">music_note</span>
-                    <p>Segueix el ritme de la música</p>
-                </div>
-                <div class="mecanica-item">
-                    <span class="material-icons">lock_open</span>
-                    <p>Desbloqueja nivells avançats</p>
+                    <ul>Salts precisos sobre obstacles</ul>
+                    <ul>Plataformes mòbils i pinxos</ul>
+                    <ul>Seguir el ritme de la música</ul>
+                    <ul>Desbloquejar nivells avançats</ul>
                 </div>
             </div>
         </section>
 
         <section class="tarjetas-container">
-            <h3>Selecciona la dificultat</h3>
+            <h3>Dificultats Disponibles</h3>
             <div class="tarjetas">
                 <div class="card card-easy">
-                    <div class="card-content">
-                        <h4>Easy</h4>
-                        <img src="./img/face-easy.png" alt="Easy" class="card-icon"> <p>Ideal per començar el teu viatge.</p>
+                    <div class="card-header-neon">Easy</div>
+                    <div class="card-body">
+                        <span class="material-icons neon-icon">sentiment_satisfied</span>
+                        <p>Nivell 1: Perfecte per aprendre els fonaments sense pressió.</p>
                     </div>
                 </div>
                 <div class="card card-medium">
-                    <div class="card-content">
-                        <h4>Medium</h4>
-                        <img src="./img/face-medium.png" alt="Medium" class="card-icon">
-                        <p>Requereix concentració i ritme.</p>
+                    <div class="card-header-neon">Medium</div>
+                    <div class="card-body">
+                        <span class="material-icons neon-icon">sentiment_neutral</span>
+                        <p>Nivell 2: Els obstacles comencen a moure's al ritme.</p>
                     </div>
                 </div>
                 <div class="card card-hard">
-                    <div class="card-content">
-                        <h4>Hard</h4>
-                        <img src="./img/face-hard.png" alt="Hard" class="card-icon">
-                        <p>Només per a mestres del cub.</p>
+                    <div class="card-header-neon">Hard</div>
+                    <div class="card-body">
+                        <span class="material-icons neon-icon">priority_high</span>
+                        <p>Nivell 3: Només per a jugadors amb reflexos d'acer.</p>
                     </div>
                 </div>
             </div>
