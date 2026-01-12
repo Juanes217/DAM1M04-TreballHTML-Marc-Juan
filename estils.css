@@ -132,73 +132,107 @@ nav a:hover, nav a.active { color: var(--primary-neon); text-shadow: 0 0 10px va
     .hero-content h2 { font-size: 1.8rem; }
 }
 /*INSTRUCCIONS*/
-/* Estils per a les Targetes Animades */
-.tarjetas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+/* Contenidor principal per donar marges i centrar (SOLUCIÓ AL TEU PROBLEMA) */
+.container-inst {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #000;
 }
-.card {
-    background: #111;
-    border: 2px solid #333;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    transition: all 0.4s ease; /* Transició per a l'efecte suau */
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+
+/* Títols amb estil GD */
+.page-title h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 7px;
 }
-.tarjetas .card img, 
-.instruccions-captures img {
-    width: 100% !important;     /* Ocupa el contenidor */
-    max-width: 750px !important; /* PERÒ no passarà de 250 píxels (ajusta aquest número al teu gust) */
-    height: auto !important;    /* No es deforma */
-    display: block !important;
-    margin: 0 auto 15px auto !important; /* Centrada i amb espai a sota */
+
+.page-title p {
+    color: #888;
+    margin-bottom: 30px;
 }
-.card img {
-    width: 100px; 
+
+/* Control de la imatge gran */
+.img-main {
+    width: 100%;
+    max-width: 700px; /* Evita que sigui gegant */
     height: auto;
-    margin: 0 auto 15px auto; /* La centra i dona espai a sota */
-    display: block;           /* Assegura que el margin auto funcioni */
+    display: block;
+    margin: 0 auto 20px auto;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
-/* EFECTE MOUSEOVER (ANIMACIÓ) */
+/* Estil per a la llista de mecàniques */
+.mecaniques-list {
+    list-style: none;
+    padding: 0;
+}
+
+.mecaniques-list li {
+    background: #111;
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 4px solid #00f2ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* TARGETES (CARDS) ANIMADES */
+.tarjetas {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.card {
+    flex: 1;
+    background: #111;
+    border: 1px solid #333;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* EFECTE MOUSEOVER */
 .card:hover {
-    transform: translateY(-15px) scale(1.03); /* Puja i creix una mica */
-    background: #1a1a1a;
-    box-shadow: 0 0 25px var(--glow-color); /* Llum neó al voltant */
-}
-
-/* Variants de colors neó segons la dificultat */
-.card-easy { --glow-color: #4CAF50; }
-.card-medium { --glow-color: #FFC107; }
-.card-hard { --glow-color: #F44336; }
-
-.card:hover .card-header-neon {
-    color: var(--glow-color);
-    text-shadow: 0 0 10px var(--glow-color);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 242, 255, 0.3);
+    border-color: #00f2ff;
 }
 
 .card-header-neon {
     font-family: 'Press Start 2P', cursive;
-    font-size: 1rem;
-    margin-bottom: 20px;
-    color: #fff;
-    transition: 0.3s;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
 }
 
 .neon-icon {
-    font-size: 50px !important;
-    color: #444;
-    margin-bottom: 15px;
-    transition: 0.3s;
+    font-size: 40px;
+    color: #00f2ff;
+    margin-bottom: 10px;
 }
 
-.card:hover .neon-icon {
-    color: var(--glow-color);
+/* FOOTER ALINEAT A LA DRETA (Requisit) */
+.footer-container {
+    text-align: right;
+    padding: 20px 50px;
+    background: #000;
+    border-top: 1px solid #222;
+}
+
+.social {
+    margin-bottom: 10px;
+}
+
+.social a {
+    color: #fff;
+    margin-left: 15px;
+    text-decoration: none;
 }
 
 /*---------------------------------------------------------*/
